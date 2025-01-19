@@ -40,7 +40,7 @@ export default function LandingPage() {
             <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl md:text-7xl">
               Your MVP, Built
               <br />
-              <span className="font-bold italic text-5xl sm:text-7xl md:text-8xl">
+              <span className="font-bold italic text-5xl sm:text-7xl md:text-8xl font-knewave">
                 Fast & Affordable
               </span>
             </h1>

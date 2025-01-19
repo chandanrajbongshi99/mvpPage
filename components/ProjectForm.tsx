@@ -21,6 +21,7 @@ export function ProjectForm() {
     budget: '',
     description: ''
   })
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -33,10 +34,38 @@ export function ProjectForm() {
         console.error('Error submitting project:', error.message, error.details, error.hint)
       } else {
         console.log('Project submitted successfully:', data)
+        setIsSubmitted(true)
+        setFormData({ name: '', email: '', budget: '', description: '' }) // Reset form
       }
     } catch (error) {
       console.error('Unexpected error:', error)
     }
+  }
+
+  if (isSubmitted) {
+    return (
+      <section>
+        <div className="container max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="backdrop-blur-md bg-black/30 border border-gray-800 rounded-2xl p-8 text-center"
+          >
+            <h2 className="text-2xl font-semibold mb-4">Thanks for reaching out!</h2>
+            <p className="text-gray-300 mb-6">We'll get back to you within 24 hours to discuss your project.</p>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={() => setIsSubmitted(false)}
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium 
+                hover:bg-primary/90 transition-colors"
+            >
+              Submit Another Project
+            </motion.button>
+          </motion.div>
+        </div>
+      </section>
+    )
   }
 
   return (
