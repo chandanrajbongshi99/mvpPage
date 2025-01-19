@@ -1,3 +1,3 @@
 <h1 className="text-xl font-bold">
-  MVPpie
+  fafo labs
 </h1> 

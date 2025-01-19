@@ -4,7 +4,7 @@ export default function Page() {
   return (
     <>
       <Head>
-        <title>MVPpie</title>
+        <title>fafo labs</title>
       </Head>
       // ... existing code ...
     </>
