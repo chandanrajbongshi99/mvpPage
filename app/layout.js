@@ -1,0 +1,6 @@
+export const metadata = {
+  title: 'MVPpie',
+  // ... existing code ...
+}
+
+// ... existing code ... 
